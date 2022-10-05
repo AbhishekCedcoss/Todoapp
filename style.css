@@ -10,6 +10,7 @@ body {
 .container {
 	display: block;
 	width: 400px;
+	height: 500px;
 	margin: 10px auto 100px;
 	background-color:#fff;
 	padding:0px 10px 10px 10px;
@@ -29,6 +30,7 @@ ul {
 
 li * {
 	float: left;
+	margin-bottom:20px ;
 }
 
 li,
@@ -53,8 +55,27 @@ button {
 	cursor: pointer;
 }
 
+
 button:hover {
 	color: #333;
+}
+
+.del{
+	padding-left: 5%;
+	padding-right: 5%;
+	border: none;
+	float: right;
+	margin-right:5%;
+}
+.edit{
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-right:5% ;
+	border: none;
+	float: right;
+}
+.del:hover{
+	color: #CF2323;
 }
 
 
@@ -99,6 +120,7 @@ label[for='new-task'] {
 input#new-task {
 	float: left;
 	width: 318px;
+	margin: 10px;
 }
 
 p > button:hover {
@@ -141,6 +163,12 @@ li > .delete:hover {
 #completed-tasks label {
 	text-decoration: line-through;
 	color: #888;
+	
+}
+#res {
+	text-decoration: line-through;
+	color: #888;
+	
 }
 
 
