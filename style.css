@@ -16,23 +16,19 @@ body {
 	padding:0px 10px 10px 10px;
 	border-radius:10px
 }
-
 h2 {
 	text-align:center;
 	padding-top:10px;
 	margin-bottom:0px;
 }
-
 ul {
 	margin: 0;
 	padding: 0;
 }
-
 li * {
 	float: left;
 	margin-bottom:20px ;
 }
-
 li,
 h3 {
 	clear: both;
@@ -108,8 +104,6 @@ input[type="text"] {
 input[type="text"]:focus {
 	color: #333;
 }
-
-
 /* New Task */
 
 label[for='new-task'] {

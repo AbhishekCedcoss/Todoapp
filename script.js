@@ -1,9 +1,7 @@
 var arr = []; //Todo Array
 var com = []; //Completed Array
-
 document.getElementById("updateTodo").style.display = "none";
 document.getElementById("updateComp").style.display = "none";
-
 //Function to add input into todo array
 function add() {
   var input = document.getElementById("new-task").value;
@@ -11,15 +9,14 @@ function add() {
     data: input,
     id: Math.random().toString(16).slice(2),
   };
-
   if (obj.data == "") {
     alert("Please Write Some TasK");
   } else {
     arr.push(obj);
+    document.getElementById("new-task").value=""
     display();
   }
 }
-
 //Function to display the todo Array
 function display() {
   var todo = "<ul>";
@@ -38,7 +35,6 @@ function display() {
   todo += "</ul>";
   document.getElementById("output").innerHTML = todo;
 }
-
 //Function to delete todo array element
 function delTodo(val) {
   for (let i = 0; i < arr.length; i++) {
@@ -67,7 +63,6 @@ function completed() {
   str += "</ul>";
   document.getElementById("res").innerHTML = str;
 }
-
 //Function to push todo tasks into completed tasks
 function comp(val) {
   for (let i = 0; i < arr.length; i++) {
@@ -79,7 +74,6 @@ function comp(val) {
   display();
   completed();
 }
-
 //Function to delete completed array
 function delComp(val) {
   for (let i = 0; i < com.length; i++) {
@@ -87,10 +81,8 @@ function delComp(val) {
       console.log(com[i].data);
       com.splice(i, 1);
     }
-  }
-  completed();
+  } completed();
 }
-
 //Function to push completed array into todo array
 function reverse(val1) {
   for (let i = 0; i < com.length; i++) {
@@ -98,45 +90,22 @@ function reverse(val1) {
       arr.push(com[i]);
       com.splice(i, 1);
     }
-  }
-  display();
-  completed();
+  }display();
+  completed(); 
 }
-
 //Function to Edit the todo tasks
 function edit(val2) {
   document.getElementById("add").style.display = "none";
   document.getElementById("updateComp").style.display = "none";
   document.getElementById("updateTodo").style.display = "block";
-
   for (let i = 0; i < arr.length; i++) {
     if (val2 == arr[i].id) {
       console.log("hello");
       document.getElementById("new-task").value = arr[i].data;
       arr.splice(i, 1);
-    }
-  }
-
-  display();
+    }}
+    display();
 }
-//Function to Edit the Completed tasks
-function edit2(val2) {
-  document.getElementById("add").style.display = "none";
-  document.getElementById("updateTodo").style.display = "none";
-  document.getElementById("updateComp").style.display = "block";
-
-  for (let i = 0; i < com.length; i++) {
-    if (val2 == com[i].id) {
-      console.log("hello");
-      document.getElementById("new-task").value = com[i].data;
-      com.splice(i, 1);
-    }
-  }
-
-  completed();
-}
-
-//Function to Update todo tasks
 function update1() {
   document.getElementById("updateTodo").style.display = "none";
   document.getElementById("updateComp").style.display = "none";
@@ -146,13 +115,24 @@ function update1() {
     data: input,
     id: Math.random().toString(16).slice(2),
   };
-
   if (obj.data == "") {
     alert("Please Write Some Task");
   } else {
     arr.push(obj);
+    document.getElementById("new-task").value=""
     display();
   }
+}
+function edit2(val2) {
+  document.getElementById("add").style.display = "none";
+  document.getElementById("updateTodo").style.display = "none";
+  document.getElementById("updateComp").style.display = "block";
+  for (let i = 0; i < com.length; i++) {
+    if (val2 == com[i].id) {
+      console.log("hello");
+      document.getElementById("new-task").value = com[i].data;
+      com.splice(i, 1);
+    }}completed(); 
 }
 //Function to update Completed tasks
 function update2() {
@@ -164,11 +144,11 @@ function update2() {
     data: input,
     id: Math.random().toString(16).slice(2),
   };
-
   if (obj.data == "") {
     alert("Please Write Some Task");
   } else {
     com.push(obj);
+    document.getElementById("new-task").value=""
     completed();
   }
 }
